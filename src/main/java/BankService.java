@@ -24,6 +24,7 @@ public class BankService {
      */
     public void deposit(double amount){
 
+        balance += amount;
     }
 
     /**
@@ -32,7 +33,11 @@ public class BankService {
      * @param amount the amount to be withdrawn.
      */
     public void withdraw(double amount){
+        double testBalance = balance -amount;
 
+        if(testBalance >= 0){
+            balance = testBalance;
+        }
     }
 
     /**
@@ -40,6 +45,6 @@ public class BankService {
      * @return the user's balance.
      */
     public double getBalance(){
-        return 0;
+        return balance;
     }
 }
